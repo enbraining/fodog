@@ -1,0 +1,174 @@
+:root {
+  --gray-rgb: #808080;
+  --blue-rgb: #1657ff;
+}
+
+.markdown-body {
+  width: 100%;
+  color: var(--text-second);
+  font-size: 0.9rem;
+  font-weight: 350;
+  letter-spacing: 0px;
+  line-height: 1.75;
+}
+
+.markdown-body a {
+  color: var(--blue-rgb);
+}
+
+.markdown-body img {
+  margin: 2rem 0;
+  width: 50%;
+}
+
+.markdown-body > * {
+  margin-bottom: 8px;
+}
+
+.markdown-body h1 {
+  font-size: 1.125rem;
+}
+
+.markdown-body h2 {
+  font-size: 1rem;
+}
+
+.markdown-body h3 {
+  font-size: 0.9rem;
+}
+
+.markdown-body > :where(h1, h2, h3) {
+  line-height: 1.75rem /* 28px */;
+  margin-top: 2rem;
+  color: var(--text-body);
+  font-weight: 600;
+  font-size: 1.2rem;
+  scroll-margin-top: var(--page-top);
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: 550;
+}
+
+.markdown-body blockquote {
+  position: relative;
+  color: var(--text-second);
+  font-family: var(--font-serif), sans-serif;
+  quotes: none;
+  padding: 2px 16px 2px 16px;
+  border-left: 4px solid #c2c2c2;
+  width: fit-content;
+  background-color: #2e2e2e;
+  --quote-offset: 3px;
+}
+
+.markdown-body blockquote:before {
+  position: absolute;
+  left: calc(-1 * var(--quote-offset));
+  color: var(--text-second);
+  content: open-quote;
+  transform: translateX(-100%);
+}
+
+.markdown-body blockquote :last-child:after {
+  margin-left: var(--quote-offset);
+  color: var(--text-second);
+  content: close-quote;
+}
+
+.markdown-body ul {
+  list-style: disc;
+  margin: 1rem;
+}
+
+.markdown-body ul li::marker {
+  color: #808080;
+}
+
+.markdown-body hr {
+  height: 1px;
+  border: none;
+  background-color: var(--border);
+}
+
+.markdown-body table {
+  empty-cells: hide;
+  @apply md:text-sm;
+}
+
+.markdown-body th {
+  @apply px-4 pb-1 text-left font-semibold
+      [&[align=center]]:text-center
+      [&[align=right]]:text-right;
+}
+
+.markdown-body td {
+  @apply border-l px-4 py-2 text-left align-text-top
+      [&[align=center]]:text-center
+      [&[align=right]]:text-right;
+}
+
+.markdown-body td:first-child {
+  word-break: keep-all;
+}
+
+.markdown-body td:last-child {
+  @apply border-r;
+}
+
+.markdown-body pre {
+  position: relative;
+  display: grid;
+  border-radius: 2px;
+  background-color: var(--shiki-color-background);
+  color: var(--shiki-color-text);
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-x: auto;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+}
+
+[data-rehype-pretty-code-fragment] pre {
+  padding-left: 0;
+}
+
+[data-rehype-pretty-code-title] {
+  color: var(--shiki-token-comment);
+  font-size: 0.9rem;
+}
+
+[data-rehype-pretty-code-caption] {
+  color: var(--shiki-token-comment);
+  font-size: 0.9rem;
+}
+
+[data-line] {
+  display: inline-block;
+  width: 100%;
+  padding: 0 16px;
+}
+
+[data-highlighted-line] {
+  background-color: var(--selection);
+}
+
+[data-line-numbers] {
+  counter-reset: line;
+}
+
+[data-line-numbers] > [data-line] {
+  @apply pl-2;
+}
+
+[data-line-numbers] > [data-line]::before {
+  display: inline-block;
+  width: 16px;
+  margin-right: 24px;
+  color: var(--shiki-token-comment);
+  content: counter(line);
+  counter-increment: line;
+  text-align: right;
+}

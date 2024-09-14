@@ -24,7 +24,7 @@ export default function Page({ params }: { params: { slug: string[] } }) {
       <Link href={'/'}>
         <MaterialSymbolsArrowLeftAltRounded className="mb-5" scope={25} />
       </Link>
-      <h1 className="pb-4 mb-8 font-semibold text-xl">{post?.title}</h1>
+      <h1 className="mb-8 font-semibold text-xl">{post?.title}</h1>
       <ReactMarkdown
         className={'markdown-body'}
         rehypePlugins={[rehypeSlug, rehypeHighlight, rehypeKatex]}

@@ -6,7 +6,6 @@
 .markdown-body {
   width: 100%;
   color: var(--text-second);
-  font-size: 0.9rem;
   font-weight: 350;
   letter-spacing: 0px;
   line-height: 1.75;
@@ -29,12 +28,8 @@
   font-size: 1.125rem;
 }
 
-.markdown-body h2 {
-  font-size: 1rem;
-}
-
-.markdown-body h3 {
-  font-size: 0.9rem;
+.markdown-body > :where(h2, h1) {
+  font-size: 1.25rem;
 }
 
 .markdown-body > :where(h1, h2, h3) {
